@@ -16,6 +16,9 @@ inputs:
   branch_name:
     description: "Nome da branch atual"
     required: true
+  github_token:
+    description: "Toke github"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
