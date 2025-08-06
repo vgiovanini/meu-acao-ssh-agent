@@ -9,7 +9,8 @@ echo "Iniciando Action..."
 # CI_REGISTRY_PASSWORD="$INPUT_CI_REGISTRY_PASSWORD"
 BRANCH_NAME="$INPUT_BRANCH_NAME"
 GH_TOKEN="$INPUT_GITHUB_TOKEN"
-export GH_TOKEN="$GH_TOKEN"
+export GH_TOKEN
+echo "GH_TOKEN recebido: ${GH_TOKEN:0:5}******"
 
 # echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
 
