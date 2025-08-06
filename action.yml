@@ -1,18 +1,6 @@
 name: "Build and Release Docker Image"
 description: "Action para build e release usando docker buildx e script Python"
 inputs:
-  # ci-registry:
-  #   description: "Registry Docker"
-  #   required: true
-  # ci-registry-image:
-  #   description: "Imagem Docker"
-  #   required: true
-  # ci-registry-user:
-  #   description: "Usuário para login no registry"
-  #   required: true
-  # ci-registry-password:
-  #   description: "Senha para login no registry"
-  #   required: true
   branch_name:
     description: "Nome da branch atual"
     required: true
@@ -25,6 +13,9 @@ inputs:
   github_repo_name:
     description: "repo name"
     required: true
+outputs:
+  tag:
+    description: "GAPGAPGAPGAPGAPGAPGAP"
 runs:
   using: "docker"
   image: "Dockerfile"
