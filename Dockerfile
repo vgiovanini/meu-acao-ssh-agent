@@ -1,6 +1,7 @@
 FROM python:3.9
 
-RUN apk add --no-cache python3 py3-pip bash
+RUN echo python --version
+RUN echo pip --version
 
 COPY scripts /scripts
 COPY requirements.txt /requirements.txt
