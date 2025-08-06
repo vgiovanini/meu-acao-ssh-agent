@@ -22,7 +22,6 @@ else
 fi
 
 echo "Tag calculada: $TAG"
-# echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-echo "tag=$TAG" >> /github/output
+echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
 echo "Release finalizada com sucesso."
