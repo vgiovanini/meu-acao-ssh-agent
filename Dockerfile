@@ -9,7 +9,7 @@ COPY scripts /scripts
 COPY requirements.txt /requirements.txt
 COPY entrypoint.sh /entrypoint.sh
 
-RUN pip install -r requirements.txt
+RUN pip install --break-system-packages -r requirements.txt
 
 RUN chmod +x /entrypoint.sh
 
