@@ -13,7 +13,7 @@ inputs:
   # ci-registry-password:
   #   description: "Senha para login no registry"
   #   required: true
-  branch-name:
+  branch_name:
     description: "Nome da branch atual"
     required: true
 runs:
