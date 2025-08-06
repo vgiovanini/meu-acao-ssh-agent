@@ -1,7 +1,9 @@
-FROM python:3.9
+FROM docker:27.2.0
 
-RUN echo python --version
-RUN echo pip --version
+RUN apk add --no-cache python3 py3-pip bash
+
+RUN python --version
+RUN pip --version
 
 COPY scripts /scripts
 COPY requirements.txt /requirements.txt
