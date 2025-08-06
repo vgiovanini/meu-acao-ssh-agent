@@ -19,6 +19,12 @@ inputs:
   github_token:
     description: "Toke github"
     required: true
+  github_owner:
+    description: "dono da bola"
+    required: true
+  github_repo_name:
+    description: "repo name"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
