@@ -69,7 +69,9 @@ class Release:
         releases = self.__api.get_releases()
 
         if len(releases) <= 0:
-            raise ReleaseError("There aren't releases")
+            raise ReleaseError(
+                "No releases or pre-releases found. Please start with a pre-release first."
+            )
 
         last_release = releases[0]
         tag = last_release["tag_name"]
