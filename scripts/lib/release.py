@@ -89,6 +89,6 @@ class Release:
             "new_tag": new_tag,
             "release_notes": release_notes,
             "is_prerelease": False,
-            "target_branch": "main",
+            "target_branch": "master",
         }
         create_release(release_information, self.__api)
