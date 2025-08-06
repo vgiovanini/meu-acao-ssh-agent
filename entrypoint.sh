@@ -3,13 +3,13 @@ set -e
 
 echo "Iniciando Action..."
 
-CI_REGISTRY="$INPUT_CI_REGISTRY"
-CI_REGISTRY_IMAGE="$INPUT_CI_REGISTRY_IMAGE"
-CI_REGISTRY_USER="$INPUT_CI_REGISTRY_USER"
-CI_REGISTRY_PASSWORD="$INPUT_CI_REGISTRY_PASSWORD"
+# CI_REGISTRY="$INPUT_CI_REGISTRY"
+# CI_REGISTRY_IMAGE="$INPUT_CI_REGISTRY_IMAGE"
+# CI_REGISTRY_USER="$INPUT_CI_REGISTRY_USER"
+# CI_REGISTRY_PASSWORD="$INPUT_CI_REGISTRY_PASSWORD"
 BRANCH_NAME="$INPUT_BRANCH_NAME"
 
-echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+# echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
 
 docker buildx create --use
 
@@ -24,9 +24,9 @@ fi
 
 echo "Tag calculada: $TAG"
 
-docker buildx build --platform linux/amd64,linux/arm64 \
-  -t "${CI_REGISTRY_IMAGE}:${TAG}" \
-  --push \
-  -f Dockerfile .
+# docker buildx build --platform linux/amd64,linux/arm64 \
+#   -t "${CI_REGISTRY_IMAGE}:${TAG}" \
+#   --push \
+#   -f Dockerfile .
 
 echo "Build e push finalizados com sucesso."
