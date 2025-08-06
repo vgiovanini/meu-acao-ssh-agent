@@ -59,4 +59,4 @@ def create_release(release_data: dict, github_api: dict):
         print(f"Release {new_tag} created successfully!")
         print(f"TAG: {new_tag}")
     else:
-        raise ReleaseError(f"Release {new_tag} ERROR !")
+        raise ReleaseError(f"Release {new_tag} ERROR ! {response.status_code}")
