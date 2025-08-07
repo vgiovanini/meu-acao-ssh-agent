@@ -4,6 +4,12 @@ inputs:
   branch_name:
     description: "Nome da branch atual"
     required: true
+  prerelease_name:
+    description: "Prerelease branch name"
+    required: true
+  release_name:
+    description: "Release branch name"
+    required: true
   github_token:
     description: "Toke github"
     required: true

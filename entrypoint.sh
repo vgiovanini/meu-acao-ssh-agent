@@ -4,6 +4,8 @@ set -e
 echo "Iniciando Action..."
 
 BRANCH_NAME="$INPUT_BRANCH_NAME"
+PRERELEASE_BRANCH_NAME="$INPUT_PRE_RELEASE_BRANCH_NAME"
+RELEASE_BRANCH_NAME="$INPUT_RELEASE_BRANCH_NAME"
 GH_TOKEN="$INPUT_GITHUB_TOKEN"
 GH_OWNER="$INPUT_GITHUB_OWNER"
 GH_REPO="$INPUT_GITHUB_REPO_NAME"
@@ -11,11 +13,11 @@ export GH_TOKEN
 export GH_OWNER
 export GH_REPO
 
-if [[ "$BRANCH_NAME" == "homolog" ]]; then
+if [[ "$BRANCH_NAME" == "$PRERELEASE_BRANCH_NAME" ]]; then
   output=$(python3 /scripts/main.py --prerelease)
   echo "$output" | grep -v "TAG:"
   TAG=$(echo "$output"| grep "TAG:" | awk '{print $2}')
-elif [[ "$BRANCH_NAME" == "master" ]]; then
+elif [[ "$BRANCH_NAME" == "$RELEASE_BRANCH_NAME" ]]; then
   output=$(python3 /scripts/main.py --release)
   echo "$output" | grep -v "TAG:"
   TAG=$(echo "$output"| grep "TAG:" | awk '{print $2}')
