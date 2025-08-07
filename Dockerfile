@@ -1,6 +1,4 @@
-FROM docker:27.2.0
-
-RUN apk add --no-cache python3 py3-pip bash
+FROM python:3.10
 
 RUN python --version
 RUN pip --version
