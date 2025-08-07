@@ -27,7 +27,7 @@ else
   echo "Branch $BRANCH_NAME not supported for release"
   exit 1
 fi
-
+echo "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 echo "Tag calculada: $TAG"
 echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
