@@ -10,18 +10,17 @@ GH_REPO="$INPUT_GITHUB_REPO_NAME"
 export GH_TOKEN
 export GH_OWNER
 export GH_REPO
-echo "GH_TOKEN recebido: ${GH_TOKEN:0:5}****** e ${GH_REPO} e ${GH_OWNER}"
 
 if [[ "$BRANCH_NAME" == "homolog" ]]; then
   output=$(python3 /scripts/main.py --prerelease)
-  echo "$output"
+  echo "$output" | grep -v "TAG:"
   TAG=$(echo "$output"| grep "TAG:" | awk '{print $2}')
 elif [[ "$BRANCH_NAME" == "master" ]]; then
   output=$(python3 /scripts/main.py --release)
-  echo "$output"
+  echo "$output" | grep -v "TAG:"
   TAG=$(echo "$output"| grep "TAG:" | awk '{print $2}')
 else
-  echo "Branch $BRANCH_NAME não suportada para release"
+  echo "Branch $BRANCH_NAME not supported for release"
   exit 1
 fi
 
