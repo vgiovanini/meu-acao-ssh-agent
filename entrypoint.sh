@@ -15,11 +15,11 @@ echo "GH_TOKEN recebido: ${GH_TOKEN:0:5}****** e ${GW_REPO} e ${GH_OWNER}"
 if [[ "$BRANCH_NAME" == "homolog" ]]; then
   output=$(python3 /scripts/main.py --prerelease)
   echo "$output"
-  TAG=$(echo "$output"| grep "TAG:" | awk '{print $2}')
+  TAG=$("$output"| grep "TAG:" | awk '{print $2}')
 elif [[ "$BRANCH_NAME" == "master" ]]; then
   output=$(python3 /scripts/main.py --release)
   echo "$output"
-  TAG=$(echo "$output"| grep "TAG:" | awk '{print $2}')
+  TAG=$("$output"| grep "TAG:" | awk '{print $2}')
 else
   echo "Branch $BRANCH_NAME não suportada para release"
   exit 1
