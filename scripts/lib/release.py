@@ -91,6 +91,6 @@ class Release:
             "new_tag": new_tag,
             "release_notes": release_notes,
             "is_prerelease": False,
-            "target_branch": "master",
+            "target_branch": self.__api.release_branch_name,
         }
         create_release(release_information, self.__api)

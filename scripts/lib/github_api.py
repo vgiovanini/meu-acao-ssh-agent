@@ -10,11 +10,15 @@ class GithubAPI:
         self.owner = self.credentials["owner"]
         self.repository = self.credentials["repo"]
         self.headers = self.credentials["headers"]
+        self.prerelease_branch_name = self.credentials["prerelease_branch"]
+        self.release_branch_name = self.credentials["release_branch"]
 
     def load_github_config(self):
         return {
             "owner": os.getenv("GH_OWNER"),
             "repo": os.getenv("GH_REPO"),
+            "release_branch": os.getenv("RELEASE_BRANCH_NAME"),
+            "prerelease_branch": os.getenv("PRERELEASE_BRANCH_NAME"),
             "headers": {
                 "Authorization": f"Bearer {os.getenv('GH_TOKEN')}",
                 "Accept": "application/vnd.github+json",

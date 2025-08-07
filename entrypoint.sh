@@ -12,6 +12,8 @@ GH_REPO="$INPUT_GITHUB_REPO_NAME"
 export GH_TOKEN
 export GH_OWNER
 export GH_REPO
+export RELEASE_BRANCH_NAME
+export PRERELEASE_BRANCH_NAME
 
 if [[ "$BRANCH_NAME" == "$PRERELEASE_BRANCH_NAME" ]]; then
   output=$(python3 /scripts/main.py --prerelease)

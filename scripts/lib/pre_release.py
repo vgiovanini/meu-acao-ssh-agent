@@ -101,7 +101,7 @@ class PreRelease:
             "new_tag": new_tag,
             "release_notes": release_notes,
             "is_prerelease": True,
-            "target_branch": "homolog",
+            "target_branch": self.__api.prerelease_branch_name,
         }
 
         create_release(release_information, self.__api)
